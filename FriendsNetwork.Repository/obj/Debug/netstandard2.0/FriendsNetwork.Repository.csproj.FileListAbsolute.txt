@@ -1,0 +1,5 @@
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Repository\bin\Debug\netstandard2.0\FriendsNetwork.Repository.deps.json
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Repository\bin\Debug\netstandard2.0\FriendsNetwork.Repository.dll
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Repository\obj\Debug\netstandard2.0\FriendsNetwork.Repository.csprojAssemblyReference.cache
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Repository\obj\Debug\netstandard2.0\FriendsNetwork.Repository.AssemblyInfoInputs.cache
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Repository\obj\Debug\netstandard2.0\FriendsNetwork.Repository.AssemblyInfo.cs

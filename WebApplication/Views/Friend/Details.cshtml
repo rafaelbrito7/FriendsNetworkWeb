@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Details";
+    var Friends = ViewData["Friends"] as List<FriendsNetwork.Repository.Models.Friendship>;
 }
 
 <h1>Details</h1>
@@ -63,4 +64,38 @@
 <div>
     <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
     <a asp-action="Index">Back to List</a>
+</div>
+
+<div>
+    <h1>Amigos</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Firstname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Lastname)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Friends)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PersonOrFriend.Firstname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PersonOrFriend.Lastname)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Deletar Amigo", "DeleteFriendShip", new { userId = item.PersonOrFriend, friendId = item.FriendId })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
 </div>

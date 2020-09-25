@@ -24,11 +24,11 @@ namespace FriendsApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Friendship>>> GetFriendship()
         {
-            return await _context.Friendship.Include(x => x.PersonOrFriend).ToListAsync();
+            return await _context.Friendship.Include(x => x.PersonOrFriend).Include(x => x.PersonOrFriend.Country).Include(x => x.PersonOrFriend.State).ToListAsync();
         }
 
         // GET: api/Friendships/5
-        [HttpGet("{id}")]
+        /*[HttpGet("{id}")]
         public async Task<ActionResult<IEnumerable<Friendship>>> GetFriendship(Guid id)
         {
             var friendShip = await _context.Friendship.Where(x => x.PersonId == id).ToListAsync();
@@ -58,7 +58,7 @@ namespace FriendsApi.Controllers
             }
 
             return friendships;
-        }
+        } */
 
         // PUT: api/Friendships/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
@@ -106,7 +106,14 @@ namespace FriendsApi.Controllers
             };
 
             _context.Friendship.Add(friendship);
+            var person = _context.People.Find(friendship.PersonId);
+            person.Friendships ??= new List<Friendship>();
+            person.Friendships.Add(friendship);
+
             _context.Friendship.Add(friendship2);
+            var friend = _context.People.Find(friendship.FriendId);
+            friend.Friendships ??= new List<Friendship>();
+            friend.Friendships.Add(friendship2);
             try
             {
                 await _context.SaveChangesAsync();
@@ -124,6 +131,12 @@ namespace FriendsApi.Controllers
             }
 
             return CreatedAtAction("GetFriendship", new { id = friendship.PersonId }, friendship);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<List<Friendship>>> GetAllFriends(Guid id)
+        {
+            return Ok(await _context.Friendship.Include(x => x.PersonOrFriend.State).Include(x => x.PersonOrFriend.Country).Where(x => x.PersonId == id).ToListAsync());
         }
 
         // DELETE: api/Friendships/5

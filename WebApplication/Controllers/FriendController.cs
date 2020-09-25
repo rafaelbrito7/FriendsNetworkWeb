@@ -51,7 +51,7 @@ namespace WebApplication.Controllers
             var people = client.Get<List<Person>>(request2);
             ViewData["People"] = people.Data;
 
-            var request3 = new RestRequest(_UriAPI + "Friendships/" + id);
+            var request3 = new RestRequest(_UriAPI + "Friendships/" + id, DataFormat.Json);
             var friends = client.Get<List<Friendship>>(request3);
             ViewData["Friends"] = friends.Data;
 

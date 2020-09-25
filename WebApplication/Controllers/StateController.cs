@@ -7,12 +7,22 @@ using Microsoft.AspNetCore.Mvc;
 using RestSharp;
 using WebApplication.Models;
 using FriendsNetwork.Repository.Models;
+using Azure.Storage.Blobs;
+using Microsoft.Extensions.Configuration;
 
 namespace WebApplication.Controllers
 {
     public class StateController : Controller
     {
         private readonly string _UriAPI = "https://localhost:44355/api/";
+
+        private string ConnectionString { get; set; }
+
+        public StateController(IConfiguration configuration)
+        {
+
+            ConnectionString = configuration.GetConnectionString("BlobConnString");
+        }
 
         // GET: StateController
         public ActionResult Index()
@@ -43,29 +53,50 @@ namespace WebApplication.Controllers
         {
             return View();
         }
+        public async Task<string> PostPhoto(IFormFile file)
+        {
+            if (file.Length > 0)
+            {
+                using (var stream = file.OpenReadStream())
+                {
+                    BlobContainerClient blobServiceClient = new BlobContainerClient(ConnectionString, "blob-at");
+                    blobServiceClient.CreateIfNotExists();
+                    DateTime now = DateTime.UtcNow;
+                    var blobClient = blobServiceClient.GetBlobClient($"{now.Ticks}-{file.FileName}");
+                    await blobClient.UploadAsync(stream);
+                    return blobClient.Uri.ToString();
+                }
+            }
+            return null;
+        }
 
         // POST: StateController/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(State model)
+        public async Task<ActionResult> Create(State state, IFormFile file)
         {
             try
             {
                 if (ModelState.IsValid == false)
-                    return View(model);
+                    return View(state);
 
-                var client = new RestClient();
-                var request = new RestRequest(_UriAPI + "States", DataFormat.Json);
-                request.AddJsonBody(model);
+                var photoUrl = await PostPhoto(file);
 
-                var response = client.Post<State>(request);
+                if (photoUrl != null)
+                {
+                    var client = new RestClient();
+                    var request = new RestRequest(_UriAPI + "States", DataFormat.Json);
+                    state.PhotoUrl = photoUrl;
+                    request.AddJsonBody(state);
 
+                    var response = client.Post<State>(request);
+                }
                 return RedirectToAction(nameof(Index));
             }
             catch
             {
                 ModelState.AddModelError(string.Empty, "An error occured, please try again later!");
-                return View(model);
+                return View(state);
             }
         }
 
@@ -82,16 +113,16 @@ namespace WebApplication.Controllers
         // POST: StateController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(Guid id, State model)
+        public ActionResult Edit(Guid id, State state)
         {
             try
             {
                 if (ModelState.IsValid == false)
-                    return View(model);
+                    return View(state);
 
                 var client = new RestClient();
                 var request = new RestRequest(_UriAPI + "States/" + id, DataFormat.Json);
-                request.AddJsonBody(model);
+                request.AddJsonBody(state);
 
                 var response = client.Put<State>(request);
 
@@ -116,13 +147,13 @@ namespace WebApplication.Controllers
         // POST: StateController/Delete/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(Guid id, State model)
+        public ActionResult Delete(Guid id, State state)
         {
             try
             {
                 var client = new RestClient();
                 var request = new RestRequest(_UriAPI + "States/" + id, DataFormat.Json);
-                request.AddJsonBody(model);
+                request.AddJsonBody(state);
 
                 var response = client.Delete<State>(request);
 

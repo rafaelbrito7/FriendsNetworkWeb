@@ -24,14 +24,14 @@ namespace FriendsApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Person>>> GetPeople()
         {
-            return await _context.People.Include(x => x.Country).Include(x => x.State).ToListAsync();
+            return await _context.People.Include(x => x.Country).Include(x => x.State).Include(x => x.Friendships).ToListAsync();
         }
 
         // GET: api/People/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Person>> GetPerson(Guid id)
         {
-            var friend = await _context.People.Include(x => x.Country).Include(x => x.State).FirstOrDefaultAsync(x => x.Id == id);
+            var friend = await _context.People.Include(x => x.Country).Include(x => x.State).Include(x => x.Friendships).FirstOrDefaultAsync(x => x.Id == id);
 
             if (friend == null)
             {
@@ -45,7 +45,7 @@ namespace FriendsApi.Controllers
         [HttpGet("Person/{id}")]
         public async Task<ActionResult<IEnumerable<Person>>> GetPeople(Guid id)
         {
-            var friend = await _context.People.Include(x => x.Country).Include(x => x.State).Where(x => x.Id != id).ToListAsync();
+            var friend = await _context.People.Include(x => x.Country).Include(x => x.State).Include(x => x.Friendships).Where(x => x.Id != id).ToListAsync();
 
             if (friend == null)
             {
@@ -98,6 +98,18 @@ namespace FriendsApi.Controllers
 
             return CreatedAtAction("GetPerson", new { id = person.Id }, person);
         }
+
+        /* [HttpPut]
+        public async Task<ActionResult<Friendship>> AddFriendshipToPerson(Guid Id, Friendship friendship)
+        {
+            var Person = await GetPerson(Id).Result;
+            if (Person == null)
+            {
+                return NotFound();
+            }
+
+            Person.
+        } */
 
         // DELETE: api/Friends/5
         [HttpDelete("{id}")]

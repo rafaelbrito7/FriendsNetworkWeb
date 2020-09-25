@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FriendsApi.Models;
-using FriendsApi.Repository;
+using FriendsNetwork.Repository.Models;
+using FriendsNetwork.Repository;
 
 namespace FriendsApi.Controllers
 {
@@ -14,9 +13,9 @@ namespace FriendsApi.Controllers
     [ApiController]
     public class PeopleController : ControllerBase
     {
-        private readonly FriendsContext _context;
+        private readonly ApplicationContext _context;
 
-        public PeopleController(FriendsContext context)
+        public PeopleController(ApplicationContext context)
         {
             _context = context;
         }
@@ -25,21 +24,35 @@ namespace FriendsApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Person>>> GetPeople()
         {
-            return await _context.People.ToListAsync();
+            return await _context.People.Include(x => x.Country).Include(x => x.State).ToListAsync();
         }
 
         // GET: api/People/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Person>> GetPerson(Guid id)
         {
-            var person = await _context.People.FindAsync(id);
+            var friend = await _context.People.Include(x => x.Country).Include(x => x.State).FirstOrDefaultAsync(x => x.Id == id);
 
-            if (person == null)
+            if (friend == null)
             {
                 return NotFound();
             }
 
-            return person;
+            return friend;
+        }
+
+        // GET: api/People/Person/5
+        [HttpGet("Person/{id}")]
+        public async Task<ActionResult<IEnumerable<Person>>> GetPeople(Guid id)
+        {
+            var friend = await _context.People.Include(x => x.Country).Include(x => x.State).Where(x => x.Id != id).ToListAsync();
+
+            if (friend == null)
+            {
+                return NotFound();
+            }
+
+            return friend;
         }
 
         // PUT: api/People/5
@@ -86,20 +99,20 @@ namespace FriendsApi.Controllers
             return CreatedAtAction("GetPerson", new { id = person.Id }, person);
         }
 
-        // DELETE: api/People/5
+        // DELETE: api/Friends/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Person>> DeletePerson(Guid id)
         {
-            var person = await _context.People.FindAsync(id);
-            if (person == null)
+            var friend = await _context.People.FindAsync(id);
+            if (friend == null)
             {
                 return NotFound();
             }
 
-            _context.People.Remove(person);
+            _context.People.Remove(friend);
             await _context.SaveChangesAsync();
 
-            return person;
+            return friend;
         }
 
         private bool PersonExists(Guid id)

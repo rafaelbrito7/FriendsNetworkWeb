@@ -1,0 +1,43 @@
+﻿@model FriendsNetwork.Repository.Models.Country
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Country</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PhotoUrl)
+        </dt>
+        <dd class="col-sm-10">
+            <img src="@Model.PhotoUrl"/>
+        </dd>
+    </dl>
+    <h4>Estados</h4>
+    <d1 class="row">
+        @foreach (var item in Model.States)
+        {
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(modelItem => item.Name)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(modelItem => item.Name)
+            </dd>
+        }
+    </d1>
+
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

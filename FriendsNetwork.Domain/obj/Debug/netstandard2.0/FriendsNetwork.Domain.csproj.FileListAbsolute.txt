@@ -1,8 +1,0 @@
-C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Domain\bin\Debug\netstandard2.0\FriendsNetwork.Domain.deps.json
-C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Domain\bin\Debug\netstandard2.0\FriendsNetwork.Domain.dll
-C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Domain\bin\Debug\netstandard2.0\FriendsNetwork.Domain.pdb
-C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Domain\obj\Debug\netstandard2.0\FriendsNetwork.Domain.csprojAssemblyReference.cache
-C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Domain\obj\Debug\netstandard2.0\FriendsNetwork.Domain.AssemblyInfoInputs.cache
-C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Domain\obj\Debug\netstandard2.0\FriendsNetwork.Domain.AssemblyInfo.cs
-C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Domain\obj\Debug\netstandard2.0\FriendsNetwork.Domain.dll
-C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsNetwork.Domain\obj\Debug\netstandard2.0\FriendsNetwork.Domain.pdb

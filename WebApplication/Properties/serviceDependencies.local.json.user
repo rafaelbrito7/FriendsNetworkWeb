@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "storage1": {
+      "restored": true,
+      "restoreTime": "2020-09-25T05:17:01.9675181Z"
+    }
+  },
+  "parameters": {
+    "resourceGroup": {
+      "Type": "resourceGroup",
+      "Value": "infnet"
+    },
+    "subscriptionId": {
+      "Type": "subscription",
+      "Value": "cef6d173-2a8f-4359-b0a5-320e52c6e81e"
+    }
+  }
+}

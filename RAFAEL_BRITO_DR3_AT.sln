@@ -5,7 +5,11 @@ VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FriendsApi", "FriendsApi\FriendsApi.csproj", "{29CF014F-EFC0-471A-A0F6-F6436655E8CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CountryStateApi", "CountryStateApi\CountryStateApi.csproj", "{3BBC0286-2EFF-4C4A-A647-E12D577F35F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CountryStateApi", "CountryStateApi\CountryStateApi.csproj", "{3BBC0286-2EFF-4C4A-A647-E12D577F35F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication", "WebApplication\WebApplication.csproj", "{1BE7FE37-1304-4820-AA3D-5A6EE4D1069B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendsNetwork.Repository", "FriendsNetwork.Repository\FriendsNetwork.Repository.csproj", "{776E12EA-0AAE-4302-A676-78265289A76A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{3BBC0286-2EFF-4C4A-A647-E12D577F35F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3BBC0286-2EFF-4C4A-A647-E12D577F35F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BBC0286-2EFF-4C4A-A647-E12D577F35F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BE7FE37-1304-4820-AA3D-5A6EE4D1069B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1BE7FE37-1304-4820-AA3D-5A6EE4D1069B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1BE7FE37-1304-4820-AA3D-5A6EE4D1069B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1BE7FE37-1304-4820-AA3D-5A6EE4D1069B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{776E12EA-0AAE-4302-A676-78265289A76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{776E12EA-0AAE-4302-A676-78265289A76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{776E12EA-0AAE-4302-A676-78265289A76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{776E12EA-0AAE-4302-A676-78265289A76A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

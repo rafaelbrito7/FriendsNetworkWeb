@@ -12,6 +12,8 @@ C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Azure.Core.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Azure.Identity.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.AzureKeyVault.HostingStartup.dll
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Razor.Language.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Microsoft.Azure.KeyVault.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Microsoft.Azure.KeyVault.WebKey.dll
@@ -65,6 +67,7 @@ C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGeneration.Utils.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\NuGet.Frameworks.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
@@ -154,6 +157,9 @@ C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\FriendsNetwork.Repository.dll
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\bin\Debug\netcoreapp3.1\FriendsNetwork.Repository.pdb
+C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\obj\Debug\netcoreapp3.1\FriendsApi.csprojAssemblyReference.cache
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\obj\Debug\netcoreapp3.1\FriendsApi.AssemblyInfoInputs.cache
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\obj\Debug\netcoreapp3.1\FriendsApi.AssemblyInfo.cs
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\obj\Debug\netcoreapp3.1\FriendsApi.csproj.CoreCompileInputs.cache
@@ -165,4 +171,3 @@ C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\obj\Debug\netcoreapp3
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\obj\Debug\netcoreapp3.1\FriendsApi.dll
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\obj\Debug\netcoreapp3.1\FriendsApi.pdb
 C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\obj\Debug\netcoreapp3.1\FriendsApi.genruntimeconfig.cache
-C:\Users\rafa_\source\repos\RAFAEL_BRITO_DR3_AT\FriendsApi\obj\Debug\netcoreapp3.1\FriendsApi.csprojAssemblyReference.cache

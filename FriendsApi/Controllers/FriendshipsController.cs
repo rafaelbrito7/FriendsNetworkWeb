@@ -136,7 +136,7 @@ namespace FriendsApi.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<List<Friendship>>> GetAllFriends(Guid id)
         {
-            return Ok(await _context.Friendship.Include(x => x.PersonOrFriend.State).Include(x => x.PersonOrFriend.Country).Where(x => x.PersonId == id).ToListAsync());
+            return Ok(await _context.Friendship.Include(x => x.PersonOrFriend.State).Include(x => x.PersonOrFriend.Country).Where(x => x.PersonId != id).ToListAsync());
         }
 
         // DELETE: api/Friendships/5

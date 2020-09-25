@@ -62,10 +62,8 @@ namespace WebApplication.Controllers
                 {
                     friendIds.Add(data.FriendId);
                 }
-
                 ViewData["FriendIds"] = friendIds;
             }
-
             return View(response.Data);
         }
 
@@ -176,7 +174,7 @@ namespace WebApplication.Controllers
             var model = new Friendship { PersonId = personId, FriendId = friendId };
             var response = client.Delete<Friendship>(request);
 
-            return RedirectToAction("Details", "Friends", new { id = personId });
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: FriendsController/Edit/5

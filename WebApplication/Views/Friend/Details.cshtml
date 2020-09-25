@@ -92,7 +92,7 @@
                         @Html.DisplayFor(modelItem => item.PersonOrFriend.Lastname)
                     </td>
                     <td>
-                        @Html.ActionLink("Deletar Amigo", "DeleteFriendShip", new { userId = item.PersonOrFriend, friendId = item.FriendId })
+                        @Html.ActionLink("Deletar Amigo", "DeleteFriendShip", new { personId = item.PersonId, friendId = item.FriendId })
                     </td>
                 </tr>
             }
